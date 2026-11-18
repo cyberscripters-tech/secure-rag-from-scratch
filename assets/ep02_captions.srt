@@ -1,0 +1,604 @@
+1
+00:00:06,700 --> 00:00:08,908
+Forty-five lines of Python. One PDF.
+
+2
+00:00:08,908 --> 00:00:13,570
+And a local AI that answers questions about
+it, with page citations, running
+
+3
+00:00:13,570 --> 00:00:15,349
+entirely on your own machine.
+
+4
+00:00:15,899 --> 00:00:19,779
+By the end of this video, you'll have built
+this yourself, from an empty folder.
+
+5
+00:00:19,779 --> 00:00:23,853
+And I'll show you the one mistake it made,
+because that mistake teaches us more than
+
+6
+00:00:23,853 --> 00:00:24,920
+all the right answers.
+
+7
+00:00:26,720 --> 00:00:28,488
+Welcome back to CyberScripters.
+
+8
+00:00:28,488 --> 00:00:31,623
+This is episode two of Build a
+Secure RAG From Scratch:
+
+9
+00:00:31,623 --> 00:00:33,733
+your first RAG, in under fifty lines.
+
+10
+00:00:35,533 --> 00:00:38,396
+Quick recap. A RAG system has
+two halves. Indexing:
+
+11
+00:00:38,396 --> 00:00:41,877
+load the document, split it into
+chunks, and embed each chunk.
+
+12
+00:00:41,877 --> 00:00:43,561
+Then retrieval and generation:
+
+13
+00:00:43,561 --> 00:00:47,491
+embed the question, find the closest
+chunks, and hand them to the LLM.
+
+14
+00:00:48,041 --> 00:00:52,027
+Today, each of those steps becomes
+one small Python function:
+
+15
+00:00:52,027 --> 00:00:56,667
+load_pdf, chunk, embed, retrieve, and
+answer. That's the whole program.
+
+16
+00:00:58,467 --> 00:00:59,688
+First, the setup.
+
+17
+00:00:59,688 --> 00:01:05,578
+Clone the series repo, create a virtual
+environment, and install the requirements:
+
+18
+00:01:05,578 --> 00:01:11,253
+numpy, pypdf for reading PDFs, the Ollama
+client, and optionally the OpenAI and
+
+19
+00:01:11,253 --> 00:01:12,690
+Anthropic libraries.
+
+20
+00:01:13,240 --> 00:01:15,083
+Then pull two models with Ollama.
+
+21
+00:01:15,083 --> 00:01:18,771
+nomic-embed-text turns text into
+vectors, and llama3.2 is a small,
+
+22
+00:01:18,771 --> 00:01:21,789
+three-billion-parameter model
+that writes the answers.
+
+23
+00:01:21,789 --> 00:01:24,582
+Together, they're about two
+point three gigabytes.
+
+24
+00:01:26,382 --> 00:01:29,944
+Our data is the Acme Robotics
+employee and customer handbook.
+
+25
+00:01:29,944 --> 00:01:34,439
+Fifteen pages about leave, expenses, IT
+security, support levels, refunds and
+
+26
+00:01:34,439 --> 00:01:35,081
+warranties.
+
+27
+00:01:35,081 --> 00:01:39,868
+Acme is fictional, so every fact is made up,
+which means we can check every answer
+
+28
+00:01:39,868 --> 00:01:40,802
+the model gives.
+
+29
+00:01:41,352 --> 00:01:42,647
+Keep an eye on page twelve.
+
+30
+00:01:42,647 --> 00:01:45,381
+That's the refund policy, and it's
+going to matter later.
+
+31
+00:01:47,181 --> 00:01:49,861
+Let's write the code. Step
+one: load the PDF.
+
+32
+00:01:49,861 --> 00:01:54,149
+pypdf gives us every page, and we keep the
+page number next to the text.
+
+33
+00:01:54,149 --> 00:01:57,247
+That page number is what lets us
+cite sources later.
+
+34
+00:01:57,797 --> 00:02:01,646
+Here's what page twelve looks like after
+extraction. Notice the first two lines:
+
+35
+00:02:01,646 --> 00:02:04,149
+the footer and the page number
+ended up in the text.
+
+36
+00:02:04,149 --> 00:02:06,266
+That's noise, and every chunk will carry it.
+
+37
+00:02:06,266 --> 00:02:08,431
+We'll clean that up properly
+in episode four.
+
+38
+00:02:10,231 --> 00:02:11,092
+Step two: chunk.
+
+39
+00:02:11,092 --> 00:02:15,503
+We slide a window of eight hundred characters
+across each page, moving forward six
+
+40
+00:02:15,503 --> 00:02:19,969
+hundred and fifty characters at a time, so
+neighbouring chunks overlap by a hundred
+
+41
+00:02:19,969 --> 00:02:21,098
+and fifty characters.
+
+42
+00:02:21,648 --> 00:02:25,010
+The handbook becomes twenty-seven chunks.
+Simple, but there's a catch.
+
+43
+00:02:25,010 --> 00:02:26,643
+Look at how page twelve was split.
+
+44
+00:02:26,643 --> 00:02:30,390
+The first chunk ends in the middle of a
+sentence about Business plans, and the
+
+45
+00:02:30,390 --> 00:02:33,223
+second chunk starts in the middle
+of a word. Remember this.
+
+46
+00:02:35,023 --> 00:02:36,013
+Step three: embed.
+
+47
+00:02:36,013 --> 00:02:40,464
+One call to Ollama sends a list of texts to
+nomic-embed-text, and we get back one
+
+48
+00:02:40,464 --> 00:02:41,344
+vector per text.
+
+49
+00:02:41,344 --> 00:02:44,311
+Each vector has seven hundred and
+sixty-eight numbers.
+
+50
+00:02:44,861 --> 00:02:49,343
+We embed all twenty-seven chunks once, at
+startup, and keep the vectors in a numpy
+
+51
+00:02:49,343 --> 00:02:49,671
+array.
+
+52
+00:02:49,671 --> 00:02:51,911
+This is the real matrix for our handbook.
+
+53
+00:02:51,911 --> 00:02:54,753
+For one PDF, that's all the
+vector database we need.
+
+54
+00:02:56,553 --> 00:02:57,633
+Step four: retrieve.
+
+55
+00:02:57,633 --> 00:03:01,792
+We embed the question with the same model,
+then compute the cosine similarity
+
+56
+00:03:01,792 --> 00:03:05,249
+between the question and every chunk,
+in a single line of numpy.
+
+57
+00:03:05,799 --> 00:03:09,326
+argsort sorts the scores, we reverse
+them, and keep the top four.
+
+58
+00:03:09,326 --> 00:03:12,039
+These are the real scores for
+our refund question.
+
+59
+00:03:12,039 --> 00:03:16,597
+Both page twelve chunks come out on top, and we
+return each chunk with its score, so
+
+60
+00:03:16,597 --> 00:03:18,930
+we can see how confident the retrieval was.
+
+61
+00:03:20,730 --> 00:03:21,701
+Step five: answer.
+
+62
+00:03:21,701 --> 00:03:25,912
+We join the retrieved chunks into one context
+block, each tagged with its page
+
+63
+00:03:25,912 --> 00:03:26,290
+number.
+
+64
+00:03:26,290 --> 00:03:28,827
+Then we wrap it in the prompt
+from episode one:
+
+65
+00:03:28,827 --> 00:03:33,199
+answer only from the context, say I don't know
+if it isn't there, and cite pages.
+
+66
+00:03:33,749 --> 00:03:36,670
+Notice that we call generate,
+not Ollama directly.
+
+67
+00:03:36,670 --> 00:03:41,228
+That's the small adapter from episode one, so
+the same code works with a local
+
+68
+00:03:41,228 --> 00:03:42,689
+model, OpenAI, or Claude.
+
+69
+00:03:44,489 --> 00:03:45,814
+Finally, the main block.
+
+70
+00:03:45,814 --> 00:03:47,746
+Load, chunk and embed the PDF once.
+
+71
+00:03:47,746 --> 00:03:52,274
+Then answer the questions passed on the command
+line, or keep asking interactively
+
+72
+00:03:52,274 --> 00:03:53,378
+until you type exit.
+
+73
+00:03:53,378 --> 00:03:56,250
+Print the answer, and the
+sources with their scores.
+
+74
+00:03:56,800 --> 00:03:57,550
+And that's it.
+
+75
+00:03:57,550 --> 00:03:59,853
+Forty-five lines, including the blank ones.
+
+76
+00:04:01,653 --> 00:04:02,753
+Let's run it. We ask:
+
+77
+00:04:02,753 --> 00:04:05,371
+what's the refund policy for
+enterprise customers?
+
+78
+00:04:05,371 --> 00:04:07,676
+How fast this runs depends on your hardware.
+
+79
+00:04:07,676 --> 00:04:11,289
+On my small two-core test machine, the
+whole run took under a minute.
+
+80
+00:04:11,839 --> 00:04:13,006
+And here's the answer.
+
+81
+00:04:13,006 --> 00:04:17,301
+A full refund within thirty days of the
+invoice date, prorated after that minus a
+
+82
+00:04:17,301 --> 00:04:21,649
+ten percent fee, credit notes within fifteen
+business days, and CFO approval above
+
+83
+00:04:21,649 --> 00:04:23,186
+twenty-five thousand dollars.
+
+84
+00:04:23,186 --> 00:04:25,678
+All correct, and page twelve
+is the top source.
+
+85
+00:04:26,228 --> 00:04:27,529
+But look at bullet four.
+
+86
+00:04:27,529 --> 00:04:31,865
+Enterprise annual contracts refunded pro rata
+within the first ninety days only.
+
+87
+00:04:31,865 --> 00:04:32,570
+That's wrong.
+
+88
+00:04:32,570 --> 00:04:35,714
+The ninety-day rule is for Business
+plans, not Enterprise.
+
+89
+00:04:37,514 --> 00:04:38,555
+Why did that happen?
+
+90
+00:04:38,555 --> 00:04:40,638
+Remember the chunk that was cut in half.
+
+91
+00:04:40,638 --> 00:04:44,752
+The Business plan sentence was split across
+two chunks, and its first half sits
+
+92
+00:04:44,752 --> 00:04:46,471
+right after the Enterprise rules.
+
+93
+00:04:46,471 --> 00:04:50,845
+A small model saw annual plans refunded pro rata
+within ninety days, and attached it
+
+94
+00:04:50,845 --> 00:04:51,782
+to the wrong plan.
+
+95
+00:04:52,332 --> 00:04:54,654
+This is the most important
+lesson of the episode.
+
+96
+00:04:54,654 --> 00:04:57,307
+RAG answers are only as good as
+the chunks you retrieve.
+
+97
+00:04:57,307 --> 00:05:01,239
+Bad chunk boundaries create confident, wrong
+answers, even when retrieval finds the
+
+98
+00:05:01,239 --> 00:05:01,760
+right page.
+
+99
+00:05:02,310 --> 00:05:06,756
+We'll fix this with smarter, structure-aware
+chunking in episode four, and we'll
+
+100
+00:05:06,756 --> 00:05:10,924
+build tests that catch mistakes like this
+automatically, in episode eleven.
+
+101
+00:05:12,724 --> 00:05:14,651
+Let's try a few more questions.
+
+102
+00:05:14,651 --> 00:05:16,577
+The warranty on the AX-200 arm:
+
+103
+00:05:16,577 --> 00:05:19,249
+twenty-four months, page thirteen. Correct.
+
+104
+00:05:19,799 --> 00:05:20,495
+Annual leave:
+
+105
+00:05:20,495 --> 00:05:24,564
+twenty-four days, with up to five carried
+over to the thirty-first of March.
+
+106
+00:05:24,564 --> 00:05:25,582
+Correct, page five.
+
+107
+00:05:25,582 --> 00:05:28,901
+And the server room is on the third
+floor. Correct, page nine.
+
+108
+00:05:29,451 --> 00:05:32,924
+Now a question the handbook can't
+answer: what is the CEO's salary?
+
+109
+00:05:32,924 --> 00:05:34,634
+And the model says: I don't know.
+
+110
+00:05:34,634 --> 00:05:38,054
+That's exactly what we asked for in the
+prompt. No made-up number.
+
+111
+00:05:39,854 --> 00:05:42,056
+Want to use a cloud model instead?
+
+112
+00:05:42,056 --> 00:05:47,495
+Copy the example env file, set LLM_PROVIDER to
+anthropic or openai, and add your API
+
+113
+00:05:47,495 --> 00:05:47,754
+key.
+
+114
+00:05:47,754 --> 00:05:52,416
+Run the exact same command, and the
+answers now come from Claude or GPT.
+
+115
+00:05:52,966 --> 00:05:55,229
+The embeddings still run
+locally with Ollama.
+
+116
+00:05:55,229 --> 00:05:59,404
+Your documents only reach the cloud model as
+part of the final prompt, meaning just
+
+117
+00:05:59,404 --> 00:06:00,460
+the retrieved chunks.
+
+118
+00:06:00,460 --> 00:06:04,031
+In episode twelve, we'll look at what
+that means for confidential data.
+
+119
+00:06:05,831 --> 00:06:06,983
+So, what's missing?
+
+120
+00:06:06,983 --> 00:06:10,806
+First, we re-embed the whole PDF
+every time the program starts.
+
+121
+00:06:10,806 --> 00:06:14,446
+That's fine for fifteen pages, but
+not for fifteen thousand.
+
+122
+00:06:14,446 --> 00:06:17,905
+Next episode, we store vectors in
+a real vector database.
+
+123
+00:06:18,455 --> 00:06:20,171
+Second, our chunking is naive:
+
+124
+00:06:20,171 --> 00:06:22,860
+fixed character windows, with
+footers mixed in.
+
+125
+00:06:22,860 --> 00:06:24,748
+And third, it only reads one PDF.
+
+126
+00:06:24,748 --> 00:06:28,753
+Word documents, emails and Slack are
+coming in episodes four to eight.
+
+127
+00:06:30,553 --> 00:06:33,813
+The full code is on GitHub, on the
+branch ep02. Next time:
+
+128
+00:06:33,813 --> 00:06:38,534
+embeddings and vector databases, and why your
+choice of embedding model matters more
+
+129
+00:06:38,534 --> 00:06:39,377
+than you think.
+
+130
+00:06:39,927 --> 00:06:43,624
+If you built this along with me, drop your
+first question and answer in the
+
+131
+00:06:43,624 --> 00:06:44,068
+comments.
+
+132
+00:06:44,068 --> 00:06:46,927
+Subscribe to CyberScripters, and
+see you in episode three.
