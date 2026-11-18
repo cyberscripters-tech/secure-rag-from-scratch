@@ -1,0 +1,28 @@
+# secrets
+.env
+*.key
+*.pem
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# generated indexes / vector stores
+*.npy
+*.npz
+index/
+.qdrant/
+chroma/
+
+# os / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# rendered video (too large for git)
+*.mp4
