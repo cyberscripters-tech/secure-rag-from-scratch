@@ -1,0 +1,56 @@
+[
+ {
+  "model": "all-minilm",
+  "prefix": false,
+  "dims": 384,
+  "hit1": 0.72,
+  "hit4": 1.0,
+  "mrr": 0.8466666666666667,
+  "index_seconds": 0.7
+ },
+ {
+  "model": "nomic-embed-text",
+  "prefix": false,
+  "dims": 768,
+  "hit1": 0.88,
+  "hit4": 1.0,
+  "mrr": 0.92,
+  "index_seconds": 6.8
+ },
+ {
+  "model": "nomic-embed-text",
+  "prefix": true,
+  "dims": 768,
+  "hit1": 0.88,
+  "hit4": 1.0,
+  "mrr": 0.93,
+  "index_seconds": 7.0
+ },
+ {
+  "model": "mxbai-embed-large",
+  "prefix": false,
+  "dims": 1024,
+  "hit1": 0.96,
+  "hit4": 1.0,
+  "mrr": 0.97,
+  "index_seconds": 16.3
+ },
+ {
+  "model": "mxbai-embed-large",
+  "prefix": true,
+  "dims": 1024,
+  "hit1": 0.96,
+  "hit4": 1.0,
+  "mrr": 0.9733333333333334,
+  "index_seconds": 15.3
+ },
+ {
+  "model": "bge-m3",
+  "prefix": false,
+  "dims": 1024,
+  "hit1": 0.92,
+  "hit4": 1.0,
+  "mrr": 0.96,
+  "index_seconds": 17.6
+ }
+]

@@ -34,7 +34,7 @@ git checkout ep02
 |---|---------|--------|--------|
 | 01 | What is RAG and why it matters | [`ep01/`](ep01) | ✅ |
 | 02 | Your first RAG in under 50 lines | [`ep02/`](ep02) | ✅ |
-| 03 | Embeddings & vector databases | `ep03/` | 🔜 |
+| 03 | Embeddings & vector databases | [`ep03/`](ep03) | ✅ |
 | 04 | PDFs done right (incl. scanned PDFs) | `ep04/` | 🔜 |
 | 05 | Word documents & metadata | `ep05/` | 🔜 |
 | 06 | Emails | `ep06/` | 🔜 |
@@ -55,7 +55,8 @@ git checkout ep02
 - [Ollama](https://ollama.com) installed, with these models:
   ```bash
   ollama pull llama3.2
-  ollama pull nomic-embed-text
+  ollama pull mxbai-embed-large   # default embedding model from EP03
+  ollama pull nomic-embed-text    # used in EP02
   ```
 - ~8 GB RAM
 - Optional: an OpenAI or Anthropic API key, if you want to use a cloud model instead
