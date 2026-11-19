@@ -36,7 +36,7 @@ git checkout ep02
 | 02 | Your first RAG in under 50 lines | [`ep02/`](ep02) | ✅ |
 | 03 | Embeddings & vector databases | [`ep03/`](ep03) | ✅ |
 | 04 | PDFs done right (incl. scanned PDFs) | [`ep04/`](ep04) | ✅ |
-| 05 | Word documents & metadata | `ep05/` | 🔜 |
+| 05 | Word documents & metadata | [`ep05/`](ep05) | ✅ |
 | 06 | Emails | `ep06/` | 🔜 |
 | 07 | Slack | `ep07/` | 🔜 |
 | 08 | One ingestion pipeline for everything | `ep08/` | 🔜 |

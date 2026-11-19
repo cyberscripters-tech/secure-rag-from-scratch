@@ -1,0 +1,74 @@
+{
+ "question": "Who has to approve a 32% discount for a customer?",
+ "runs": 5,
+ "1_memo_says_it_replaces": {
+  "memo_text": "[pricing_memo.docx \u00b7 What changes]\nEffective 1 October 2026, discount approvals work as follows. This replaces the thresholds in section 4.1 of the Employee & Customer Policy Handbook v7.2.\n\nDiscount: up to 15% | Approval needed: Account executive (no extra approval)\nDiscount: above 15% | Approval needed: VP of Sales\nDiscount: above 30% | Approval needed: VP of Sales and CFO\nDiscount: above 40% | Approval needed: Not allowed without a board-approved exception",
+  "A_no_dates": [
+   "According to the updated pricing memo (pricing_memo.docx), a discount of 32% would require approval from both the VP of Sales and the CFO.",
+   "According to the revised discount approval policy effective 1 October 2026, a 32% discount requires approval from both the VP of Sales and the CFO.",
+   "According to the pricing_memo.docx, a discount above 30% requires approval from both the VP of Sales and the CFO. Therefore, for a 32% discount, approval from both the VP of Sales and the CFO is required.",
+   "According to section 4.1 of the Employee & Customer Policy Handbook v7.2 [handbook.pdf p11], discounts above 30% require approval from both the VP of Sales and the CFO.\n\nTherefore, for a 32% discount, approval from both the VP of Sales and the CFO is required.",
+   "According to the pricing_memo.docx, a discount above 30% requires approval from both the VP of Sales and the CFO. Since a 32% discount falls above the 30% threshold, both the VP of Sales and the CFO would need to approve the discount for the customer."
+  ],
+  "B_dates_and_rule": [
+   "According to the most recently modified source (pricing_memo.docx \u00b7 modified 2026-09-15 \u00b7 author Finance (CFO office)), a discount above 30% requires approval from both the VP of Sales and the CFO. Since a 32% discount is above 30%, it requires approval from both.",
+   "According to the most recently modified source, pricing_memo.docx, a discount above 30% requires approval from both the VP of Sales and the CFO. However, there is a conflict with the handbook.pdf, which does not specify the CFO's involvement in such cases.\n\n[handbook.pdf p4 \u00b7 4.1 Plans and billing]\n* ...Discounts above 35% also require approval from the CFO... \n\n[pricing_memo.docx \u00b7 What changes]\n* Discount: above 30% | Approval needed: VP of Sales and CFO\n\nSince pricing_memo.docx is the most recently modified source, the answer is that a 32% discount for a customer requires approval from both the VP of Sales and the CFO.",
+   "According to the most recently modified source (pricing_memo.docx), a 32% discount would require approval from both the VP of Sales and the CFO. \n\nConflict: The original handbook.pdf (modified 2026-03-02) and the Finance (CFO office) source (pricing_memo.docx) have different approval thresholds for discounts above 30%.",
+   "According to the most recently modified source, pricing_memo.docx (modified 2026-09-15), a 32% discount would require approval from both the VP of Sales and the CFO.",
+   "According to the Handbook, since the CFO has also updated the pricing policy, and [pricing_memo.docx \u00b7 What changes] states that discount approvals work as follows, the correct answer is:\n\nThe VP of Sales and CFO have to approve a 32% discount for a customer, as stated in section 4.1 of the Employee & Customer Policy Handbook v7.2, which has been updated by the CFO's office on 2026-09-15 [pricing_memo.docx].\n\nConflict: The Handbook previously stated that discounts above 30% required approval from the VP of Sales and CFO, but the CFO's office updated the policy to require additional approval from the CFO for discounts above 40%, and now a 32% discount requires approval from both the VP of Sales and CFO."
+  ]
+ },
+ "2_memo_silent": {
+  "memo_text": "[pricing_memo.docx \u00b7 What changes]\nDiscount: up to 15% | Approval needed: Account executive (no extra approval)\nDiscount: above 15% | Approval needed: VP of Sales\nDiscount: above 30% | Approval needed: VP of Sales and CFO\nDiscount: above 40% | Approval needed: Not allowed without a board-approved exception",
+  "A_no_dates": [
+   "According to the pricing_memo.docx, a discount above 30% requires approval from both the VP of Sales and the CFO. Since the requested discount is 32%, which is above 30%, the answer is that both the VP of Sales and the CFO need to approve the discount.",
+   "According to the pricing_memo.docx, a discount above 30% requires approval from the VP of Sales and CFO. Since the requested discount is 32%, which is above 30%, both approvals are required.",
+   "I don't know.",
+   "According to the context, a 32% discount would fall under the category of \"above 30%\". Therefore, to approve a 32% discount, you would need to get approval from both the VP of Sales and the CFO.",
+   "According to the pricing memo, a discount above 30% requires approval from both the VP of Sales and the CFO. Therefore, for a 32% discount, approval would be needed from both the VP of Sales and the CFO."
+  ],
+  "B_dates_and_rule": [
+   "According to the context, to provide an answer, I need to reconcile the information from both sources.\n\n[handbook.pdf p11] states that discounts above 20% require approval from the VP of Sales, and above 35% require approval from both the VP of Sales and the CFO.\n\n[pricing_memo.docx] states that discounts above 30% require approval from both the VP of Sales and the CFO.\n\nHowever, since [pricing_memo.docx] is the most recently modified source (2026-09-15), I will follow it. A 32% discount is above 30%, so according to [pricing_memo.docx], a 32% discount would require approval from both the VP of Sales and the CFO.",
+   "According to the most recently modified source, [pricing_memo.docx \u00b7 2026-09-15 \u00b7 author Finance (CFO office)], a discount of 32% would require approval from both the VP of Sales and the CFO.",
+   "According to the handbook.pdf (modified 2026-03-02), a discount above 35% requires approval from both the VP of Sales and the CFO. Since a 32% discount is below 35%, only the VP of Sales would need to approve it.\n\nNo conflict is found with the pricing_memo.docx (modified 2026-09-15), which also outlines the approval requirements for discounts above 35%.",
+   "According to the handbook.pdf, page 4, Section 4.1 Plans and billing, discounts above 35% require approval from the VP of Sales and CFO. A 32% discount is above 30%, but below 35%, so it requires approval from the VP of Sales.\n\nConflicting with the finance memo: pricing_memo.docx, which states that discounts above 30% require approval from the VP of Sales and CFO. The finance memo suggests that the 32% discount would require approval from both, but the handbook.pdf and the internal logic of the company suggests that only the VP of Sales is needed.",
+   "According to the latest information from the pricing memo (pricing_memo.docx), which was last modified in 2026-09-15, a discount above 30% requires approval from both the VP of Sales and the CFO. Since a 32% discount is above 30%, it requires approval from both of these individuals.\n\nNote: There is a slight conflict between the information in the handbook.pdf and the pricing memo.docx. The handbook.pdf states that discounts above 35% require approval from both the VP of Sales and the CFO, but the pricing memo.docx states that only the VP of Sales is required for discounts above 35%. However, the pricing memo.docx is the most recently modified source, so we follow its information."
+  ]
+ },
+ "manual_review": {
+  "how": "Correct = the final answer says a 32% discount needs the CFO (memo rule). Each answer read by hand.",
+  "1_memo_says_it_replaces": {
+   "A_no_dates": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "B_dates_and_rule": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "2_memo_silent": {
+   "A_no_dates": [
+    1,
+    1,
+    0,
+    1,
+    1
+   ],
+   "B_dates_and_rule": [
+    1,
+    1,
+    0,
+    0,
+    1
+   ]
+  },
+  "notes": "2_memo_silent A[2] answered \"I don't know\". B[2] and B[3] followed the outdated handbook rule (VP only)."
+ }
+}

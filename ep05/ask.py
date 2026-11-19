@@ -1,0 +1,62 @@
+"""EP05: ask across PDFs and Word files, with metadata filters.
+
+    python ep05/ask.py "Who has to approve a 32% discount?"
+    python ep05/ask.py --type docx "What are the payment terms?"
+    python ep05/ask.py --since 2026-06-01 "What changed about discounts?"
+"""
+import argparse
+
+from qdrant_client import models
+
+from llm import generate
+from store import COLLECTION, check_meta, embed, open_db
+
+PROMPT = """You are Acme Robotics' internal assistant. Answer ONLY from the context below.
+If the answer is not in the context, say "I don't know".
+Each source shows when it was last modified. If sources disagree, follow the most recently
+modified source and briefly mention the conflict.
+Cite sources like [handbook.pdf p3] or [legal_terms.docx].
+
+Context:
+{context}
+
+Question: {question}"""
+
+
+def where(doc_type=None, since=None):
+    must = []
+    if doc_type:
+        must.append(models.FieldCondition(key="doc_type", match=models.MatchValue(value=doc_type)))
+    if since:
+        must.append(models.FieldCondition(key="modified", range=models.DatetimeRange(gte=since)))
+    return models.Filter(must=must) if must else None
+
+
+def cite(p):
+    return f"{p['source']} p{p['page']}" if p.get("page") else p["source"]
+
+
+def retrieve(db, question, k=4, **filters):
+    hits = db.query_points(COLLECTION, query=embed([question])[0], limit=k, query_filter=where(**filters)).points
+    return [(h.payload, h.score) for h in hits]
+
+
+def answer(question, hits):
+    context = "\n\n".join(f"(source: {cite(p)} · modified {p['modified']} · author {p['author']})\n{p['text']}"
+                          for p, _ in hits)
+    return generate(PROMPT.format(context=context, question=question))
+
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("questions", nargs="*")
+    ap.add_argument("--type", choices=["pdf", "docx"], help="only search this document type")
+    ap.add_argument("--since", help="only documents modified on/after YYYY-MM-DD")
+    args = ap.parse_args()
+    check_meta()
+    db = open_db()
+    for q in args.questions or iter(lambda: input("\n> "), "exit"):
+        hits = retrieve(db, q, doc_type=args.type, since=args.since)
+        print(answer(q, hits))
+        print("sources:", ", ".join(f"{cite(p)} [{p['modified']}] ({s:.2f})" for p, s in hits))
+    db.close()
