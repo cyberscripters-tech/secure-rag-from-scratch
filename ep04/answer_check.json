@@ -1,0 +1,44 @@
+{
+ "naive": {
+  "refund_answers": [
+   "According to the handbook (p12), for Enterprise customers:\n\n* A full refund is available within 30 days of the invoice date, handled by the billing team and submitted by the customer's account owner through their Technical Account Manager or to billing@acme-robotics.example.\n* After 30 days, refunds are prorated, with the customer receiving a credit for the unused full months remaining in the contract term, minus a 10% early-termination fee.\n* Prorated refunds are issued as credit notes within 15 business days.\n* Business plan customers may cancel at any time, but annual Business plans are refunded pro rata within the first 90 days only.",
+   "According to the handbook.pdf p12, Enterprise customers may request a full refund within 30 days of the invoice date. After 30 days, refunds for Enterprise annual contracts are prorated: the customer receives a credit for the unused full months remaining in the contract term, minus a 10% early-termination fee.",
+   "According to the handbook (p12), the refund policy for Enterprise customers is as follows:\n\n* Refunds are available within 30 days of the invoice date, handled by the billing team and submitted by the customer's account owner through their Technical Account Manager or to billing@acme-robotics.example.\n* After 30 days, refunds for Enterprise annual contracts are prorated: the customer receives a credit for the unused full months remaining in the contract term, minus a 10% early-termination fee.\n* Prorated refunds are issued as credit notes within 15 business days.\n\nNote that this policy only applies to Enterprise annual contracts, and not to Business or Standard plan customers.",
+   "According to page 12 of the handbook.pdf, the refund policy for Enterprise customers is as follows:\n\n* Refund requests are handled by the billing team and must be submitted by the customer's account owner through their Technical Account Manager or to billing@acme-robotics.example.\n* Refunds for Enterprise annual contracts are prorated: the customer receives a credit for the unused full months remaining in the contract term, minus a 10% early-termination fee.\n* Prorated refunds are issued as credit notes within 15 business days.\n* However, it's also stated that Enterprise customers may cancel at any time, and in such cases, annual Business plans are refunded pro rata within the first 90 days only.",
+   "According to the handbook (p12), the refund policy for Enterprise customers is as follows:\n\n* A full refund is possible within 30 days of the invoice date, handled by the billing team and submitted by the customer's account owner through their Technical Account Manager or to billing@acme-robotics.example.\n* After 30 days, refunds are prorated: the customer receives a credit for the unused full months remaining in the contract term, minus a 10% early-termination fee.\n* Prorated refunds are issued as credit notes within 15 business days.\n* Annual Enterprise contracts are refunded pro rata within the first 90 days only."
+  ],
+  "refund_wrong": 2,
+  "others": {
+   "How fast can the last wrist joint of the AX-200 rotate?": "According to the specifications (handbook.pdf p3 is not mentioned in the context, but p2 has it), the last wrist joint (J6 wrist 3) can rotate at a speed of 300 \u00b0/s.",
+   "When is payment due for invoice INV-2026-0418, and how much is due?": "According to the handbook (p11), invoices for the Standard and Business plans are billed monthly or annually, and Enterprise contracts are annual and invoiced in advance. Since INV-2026-0418 is an Enterprise contract, it is likely an annual contract.\n\nAccording to the handbook (p11), Enterprise contracts are invoiced in advance, with payment terms of net 45 days. This means that payment is due 45 days after the invoice date. \n\nUnfortunately, the handbook does not provide the exact amount due for this invoice."
+  },
+  "refund_flags": [
+   false,
+   false,
+   false,
+   true,
+   true
+  ]
+ },
+ "structured": {
+  "refund_answers": [
+   "According to handbook.pdf p12, the refund policy for Enterprise customers is as follows:\n\n* Within 30 days of the invoice date, Enterprise customers can request a full refund.\n* After 30 days, refunds are prorated, with the customer receiving a credit for the unused full months remaining in the contract term, minus a 10% early-termination fee.\n* Prorated refunds are issued as credit notes within 15 business days.\n\nAdditionally, according to handbook.pdf p12, Enterprise customers also need to submit their refund requests through their Technical Account Manager or to billing@acme-robotics.example.",
+   "According to the handbook.pdf, p12, for Enterprise customers, refunds are issued as follows:\n\n- A full refund is possible within 30 days of the invoice date, handled by the billing team and submitted by the account owner through their Technical Account Manager or to billing@acme-robotics.example.\n- After 30 days, refunds are prorated: the customer receives a credit for the unused full months remaining in the contract term, minus a 10% early-termination fee.\n- Prorated refunds are issued as credit notes within 15 business days.\n\nAdditionally, if the refund amount exceeds USD 25,000, it requires written approval from the CFO.",
+   "According to the handbook.pdf, p12, the refund policy for Enterprise customers is as follows:\n\n* Enterprise customers may request a full refund within 30 days of the invoice date.\n* Refund requests are handled by the billing team and must be submitted by the customer's account owner through their Technical Account Manager or to billing@acme-robotics.example.\n* After 30 days, refunds for Enterprise annual contracts are prorated: the customer receives a credit for the unused full months remaining in the contract term, minus a 10% early-termination fee.\n* Prorated refunds are issued as credit notes within 15 business days.\n\nAdditionally, according to p12, Enterprise customers receive a credit for the unused full months remaining in the contract term, minus a 10% early-termination fee, but there is no specific mention of the number of remaining months in the contract.",
+   "According to the handbook.pdf, p12, the refund policy for Enterprise customers is as follows:\n\n* Within 30 days of the invoice date, a full refund is issued.\n* After 30 days, refunds are prorated: the customer receives a credit for the unused full months remaining in the contract term, minus a 10% early-termination fee.\n* Prorated refunds are issued as credit notes within 15 business days.\n\nAdditionally, for Enterprise customers, a named Technical Account Manager and a quarterly business review are also provided.",
+   "According to handbook.pdf p12, the refund policy for Enterprise customers is as follows:\n\n* Within 30 days of the invoice date, a full refund can be requested by the customer's account owner through their Technical Account Manager or to billing@acme-robotics.example.\n* After 30 days, refunds are prorated: the customer receives a credit for the unused full months remaining in the contract term, minus a 10% early-termination fee. Prorated refunds are issued as credit notes within 15 business days."
+  ],
+  "refund_wrong": 0,
+  "others": {
+   "How fast can the last wrist joint of the AX-200 rotate?": "According to the technical data sheet, the joint: J6 wrist 3 has a maximum speed of 300 \u00b0/s.",
+   "When is payment due for invoice INV-2026-0418, and how much is due?": "According to the invoice, the payment due date is 29 October 2026, and the total amount due is EUR 115,150.00."
+  },
+  "refund_flags": [
+   false,
+   false,
+   false,
+   false,
+   false
+  ]
+ }
+}

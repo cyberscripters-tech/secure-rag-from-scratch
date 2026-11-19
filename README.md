@@ -35,7 +35,7 @@ git checkout ep02
 | 01 | What is RAG and why it matters | [`ep01/`](ep01) | ✅ |
 | 02 | Your first RAG in under 50 lines | [`ep02/`](ep02) | ✅ |
 | 03 | Embeddings & vector databases | [`ep03/`](ep03) | ✅ |
-| 04 | PDFs done right (incl. scanned PDFs) | `ep04/` | 🔜 |
+| 04 | PDFs done right (incl. scanned PDFs) | [`ep04/`](ep04) | ✅ |
 | 05 | Word documents & metadata | `ep05/` | 🔜 |
 | 06 | Emails | `ep06/` | 🔜 |
 | 07 | Slack | `ep07/` | 🔜 |
@@ -59,6 +59,7 @@ git checkout ep02
   ollama pull nomic-embed-text    # used in EP02
   ```
 - ~8 GB RAM
+- From EP04: [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) (`apt install tesseract-ocr` / `brew install tesseract`)
 - Optional: an OpenAI or Anthropic API key, if you want to use a cloud model instead
 
 ## Choosing the model
