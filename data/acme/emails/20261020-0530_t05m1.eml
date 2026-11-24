@@ -1,0 +1,22 @@
+Subject: AX-200 firmware 4.0 release plan
+From: Sofia Martins <sofia.martins@acme-robotics.example>
+To: Martin Keller <martin.keller@acme-robotics.example>,
+ Rahul Desai <rahul.desai@acme-robotics.example>
+Date: Tue, 20 Oct 2026 11:00:00 +0530
+Message-ID: <179550016303.233.11580058568597299293.t5m1@acme-robotics.example>
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body style=3D"font-family:Calibri"><p>Hi all,</p><p>Firmware 4.0 for t=
+he AX-200 is scheduled for release on 2 December 2026. Highlights:</p><p>- ad=
+justable collision sensitivity (the default force limit stays at 150 N)<br>- =
+20% faster path planning<br>- new safety audit log export (CSV)</p><p>Custome=
+rs on Acme Care get the update automatically; everyone else can download it f=
+rom the Cloud Console.</p><p>Best regards,<br>Sofia</p><p>-- <br>Sofia Martin=
+s<br>Firmware Lead | Acme Robotics<br>+91 20 5555 0160 | sofia.martins@acme-r=
+obotics.example</p><p>CONFIDENTIALITY NOTICE: This e-mail and any attachments=
+ are confidential and may be legally privileged. If you are not the intended =
+recipient, please notify the sender immediately and delete this message. Acme=
+ Robotics Pvt. Ltd. accepts no liability for any damage caused by viruses tra=
+nsmitted by this e-mail.</p></body></html>

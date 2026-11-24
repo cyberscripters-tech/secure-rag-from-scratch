@@ -1,0 +1,44 @@
+Subject: Re: Rover-S battery not charging (ticket #4471)
+From: Rahul Desai <rahul.desai@acme-robotics.example>
+To: Jack O'Neill <jack.oneill@harbor-logistics.example>
+Date: Wed, 03 Jun 2026 14:45:00 +0530
+Message-ID: <179550016303.233.9907961438014389093.t4m2@acme-robotics.example>
+In-Reply-To:
+ <179550016303.233.4790245153619611176.t4m1@harbor-logistics.example>
+References:
+ <179550016303.233.4790245153619611176.t4m1@harbor-logistics.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Jack,
+
+Thanks for the details. Firmware 2.3.1 has a known bug in the charging contro=
+ller after a deep discharge. Please don't replace anything yet: we're shippin=
+g two replacement battery packs under warranty today, and firmware 2.3.2 with=
+ the fix will be released on 10 June.
+
+Best regards,
+Rahul
+
+--=20
+Rahul Desai
+Support Engineer, Mobile Robots | Acme Robotics
++91 20 5555 0188 | rahul.desai@acme-robotics.example
+
+CONFIDENTIALITY NOTICE: This e-mail and any attachments are confidential and =
+may be legally privileged. If you are not the intended recipient, please noti=
+fy the sender immediately and delete this message. Acme Robotics Pvt. Ltd. ac=
+cepts no liability for any damage caused by viruses transmitted by this e-mai=
+l.
+
+On Wed, 03 Jun 2026 at 08:10, Jack O'Neill <jack.oneill@harbor-logistics.exam=
+ple> wrote:
+> Hi,
+>
+> Two of our Rover-S units in the Rotterdam warehouse stopped charging overni=
+ght. The docking light blinks orange. Firmware version is 2.3.1. This is bloc=
+king our night shift.
+>
+> Best regards,
+> Jack

@@ -1,0 +1,82 @@
+{
+ "naive": {
+  "chunks": 39,
+  "chars": 22412,
+  "repeated_sentence_share": 0.6052631578947368,
+  "msg_hit1": 0.25,
+  "thread_hit1": 0.8333333333333334,
+  "thread_hit4": 1.0,
+  "misses": [
+   {
+    "question": "When is the on-site installation at Brightline?",
+    "expected": [
+     "t01m2"
+    ],
+    "got": "20260921-0630_t02m1.eml"
+   },
+   {
+    "question": "What PO number did Brightline Packaging give us?",
+    "expected": [
+     "t01m3"
+    ],
+    "got": "20260921-0630_t02m1.eml"
+   }
+  ]
+ },
+ "clean": {
+  "chunks": 18,
+  "chars": 5327,
+  "repeated_sentence_share": 0.0,
+  "msg_hit1": 0.5833333333333334,
+  "thread_hit1": 0.8333333333333334,
+  "thread_hit4": 1.0,
+  "misses": [
+   {
+    "question": "When is the on-site installation at Brightline?",
+    "expected": [
+     "t01m2"
+    ],
+    "got": "20260922-0715_t02m2.eml"
+   },
+   {
+    "question": "What PO number did Brightline Packaging give us?",
+    "expected": [
+     "t01m3"
+    ],
+    "got": "20260922-0715_t02m2.eml"
+   }
+  ]
+ },
+ "thread": {
+  "chunks": 7,
+  "chars": 4604,
+  "repeated_sentence_share": 0.0,
+  "msg_hit1": 0.0,
+  "thread_hit1": 0.8333333333333334,
+  "thread_hit4": 1.0,
+  "misses": [
+   {
+    "question": "When is the on-site installation at Brightline?",
+    "expected": [
+     "t01m2"
+    ],
+    "got": [
+     "20260921-0630_t02m1.eml",
+     "20260922-0715_t02m2.eml",
+     "20260923-1250_t02m3.eml"
+    ]
+   },
+   {
+    "question": "What PO number did Brightline Packaging give us?",
+    "expected": [
+     "t01m3"
+    ],
+    "got": [
+     "20260921-0630_t02m1.eml",
+     "20260922-0715_t02m2.eml",
+     "20260923-1250_t02m3.eml"
+    ]
+   }
+  ]
+ }
+}

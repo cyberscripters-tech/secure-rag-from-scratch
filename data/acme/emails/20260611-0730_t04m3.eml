@@ -1,0 +1,55 @@
+Subject: Re: Rover-S battery not charging (ticket #4471)
+From: Jack O'Neill <jack.oneill@harbor-logistics.example>
+To: Rahul Desai <rahul.desai@acme-robotics.example>
+Date: Thu, 11 Jun 2026 07:30:00 +0000
+Message-ID:
+ <179550016303.233.15647957211777860770.t4m3@harbor-logistics.example>
+In-Reply-To: <179550016303.233.9907961438014389093.t4m2@acme-robotics.example>
+References:
+ <179550016303.233.4790245153619611176.t4m1@harbor-logistics.example>
+ <179550016303.233.9907961438014389093.t4m2@acme-robotics.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi Rahul,
+
+Batteries arrived and 2.3.2 is installed on all 14 units. No issues since. Yo=
+u can close the ticket.
+
+Best regards,
+Jack
+
+On Wed, 03 Jun 2026 at 14:45, Rahul Desai <rahul.desai@acme-robotics.example>=
+ wrote:
+> Hi Jack,
+>
+> Thanks for the details. Firmware 2.3.1 has a known bug in the charging cont=
+roller after a deep discharge. Please don't replace anything yet: we're shipp=
+ing two replacement battery packs under warranty today, and firmware 2.3.2 wi=
+th the fix will be released on 10 June.
+>
+> Best regards,
+> Rahul
+>
+> --=20
+> Rahul Desai
+> Support Engineer, Mobile Robots | Acme Robotics
+> +91 20 5555 0188 | rahul.desai@acme-robotics.example
+>
+> CONFIDENTIALITY NOTICE: This e-mail and any attachments are confidential an=
+d may be legally privileged. If you are not the intended recipient, please no=
+tify the sender immediately and delete this message. Acme Robotics Pvt. Ltd. =
+accepts no liability for any damage caused by viruses transmitted by this e-m=
+ail.
+>
+> On Wed, 03 Jun 2026 at 08:10, Jack O'Neill <jack.oneill@harbor-logistics.ex=
+ample> wrote:
+> > Hi,
+> >
+> > Two of our Rover-S units in the Rotterdam warehouse stopped charging over=
+night. The docking light blinks orange. Firmware version is 2.3.1. This is bl=
+ocking our night shift.
+> >
+> > Best regards,
+> > Jack
