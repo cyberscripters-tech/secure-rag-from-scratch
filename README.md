@@ -39,7 +39,7 @@ git checkout ep02
 | 05 | Word documents & metadata | [`ep05/`](ep05) | ✅ |
 | 06 | Emails | [`ep06/`](ep06) | ✅ |
 | 07 | Slack | [`ep07/`](ep07) | ✅ |
-| 08 | One ingestion pipeline for everything | `ep08/` | 🔜 |
+| 08 | One ingestion pipeline for everything | [`ep08/`](ep08) | ✅ |
 | 09 | Better retrieval: hybrid search & re-ranking | `ep09/` | 🔜 |
 | 10 | Chat UI with citations | `ep10/` | 🔜 |
 | 11 | Evaluating your RAG | `ep11/` | 🔜 |
