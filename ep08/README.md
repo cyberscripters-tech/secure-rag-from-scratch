@@ -20,9 +20,11 @@ Or with cron: `*/15 * * * * cd ~/secure-rag-from-scratch && python ep08/ingest.p
 
 | run | result |
 |---|---|
-| full | 24 files + 21 Slack messages → 74 chunks in 42.1 s; 2 duplicate attachments indexed once (EP07: 81 chunks); 2 hidden injections quarantined |
+| full (`slack_update/` moved aside) | 24 files + 21 Slack messages → 74 chunks in 42.1 s; 2 duplicate attachments indexed once (EP07: 81 chunks); 2 hidden injections quarantined |
 | again, nothing changed | 0 chunks, 0.0 s |
 | pricing memo edited, phishing email deleted, 1 new Slack message | 1 changed, 1 deleted, 5 chunks embedded, 4 removed, 1.9 s |
+
+On a fresh clone `--full` also picks up `slack_update/`: 22 messages, 75 chunks. The evaluation numbers are the same either way.
 
 Evaluation (`evaluation.json`):
 
