@@ -1,0 +1,28 @@
+[
+  {
+    "type": "message",
+    "user": "U03SOFIA",
+    "text": "Firmware 4.0 for the AX-200: code freeze is on 18 November, release still planned for 2 December.",
+    "ts": "1794285000.000000",
+    "thread_ts": "1794285000.000000",
+    "reply_count": 1,
+    "replies": [
+      {
+        "user": "U08VIKRAM",
+        "ts": "1794286500.000000"
+      }
+    ],
+    "edited": {
+      "user": "U03SOFIA",
+      "ts": "1794285360.000000"
+    }
+  },
+  {
+    "type": "message",
+    "user": "U08VIKRAM",
+    "text": "QA plan is ready, 3 days of safety regression tests after the freeze.",
+    "ts": "1794286500.000000",
+    "thread_ts": "1794285000.000000",
+    "parent_user_id": "U03SOFIA"
+  }
+]

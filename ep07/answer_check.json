@@ -1,0 +1,84 @@
+{
+ "naive": {
+  "who_asked": {
+   "context": [
+    "<@U03SOFIA> should I tell the customers who asked about 4.0?",
+    "Confirmed. Fix is small but needs a full re-test. Firmware 4.0 release moves to 9 December.",
+    "Firmware 4.0 for the AX-200: code freeze is on 18 November, release still planned for 2 December.",
+    "<@U01MAYA> Northwind Foods wants to cancel their Enterprise subscription 25 days after the invoice. Can we still give a full refund?"
+   ],
+   "answers": [
+    "<@U03SOFIA>",
+    "<@U03SOFIA>",
+    "<@U03SOFIA>"
+   ]
+  },
+  "maya": {
+   "context": [
+    "<@U01MAYA> Northwind Foods wants to cancel their Enterprise subscription 25 days after the invoice. Can we still give a full refund?",
+    "Yes. Legal says 30 days is firm for enterprise, and 25 < 30, so full refund. Loop in billing.",
+    "<@U03SOFIA> should I tell the customers who asked about 4.0?",
+    "Thanks! Forwarding to Kavya in billing."
+   ],
+   "answers": [
+    "Maya said we can give a full refund, as 25 days is less than the 30-day firm period for Enterprise subscriptions, and she's looping in billing.",
+    "Maya said we can give a full refund because 25 days is less than the 30-day firm period for the Enterprise subscription.",
+    "Yes, Legal says 30 days is firm for enterprise, and 25 < 30, so full refund."
+   ]
+  },
+  "release": {
+   "context": [
+    "Firmware 4.0 for the AX-200: code freeze is on 18 November, release still planned for 2 December.",
+    "Confirmed. Fix is small but needs a full re-test. Firmware 4.0 release moves to 9 December.",
+    ":tada: Brightline Packaging signed the 2027 framework agreement today: six AX-200 arms at 28% off. First delivery planned for March 2027.",
+    "Rover-S firmware 2.3.2 is now rolled out to all customer fleets. Charging issue ticket count is back to zero."
+   ],
+   "answers": [
+    "Firmware 4.0 for the AX-200 is now scheduled for release on 9 December.",
+    "According to the latest update, firmware 4.0 for the AX-200 is now scheduled for release on 9 December.",
+    "Firmware 4.0 for the AX-200 is now scheduled for release on 9 December."
+   ]
+  }
+ },
+ "clean": {
+  "who_asked": {
+   "context": [
+    "[slack \u00b7 #engineering \u00b7 thread started by Vikram Shah \u00b7 2026-11-19]\nVikram Shah (2026-11-19 15:20): Safety regression found an issue in the new collision sensitivity setting at the highest level: the protective stop takes 310 ms instead of the required 250 ms.\nSofia Martins (2026-11-19 16:00): Confirmed. Fix is small but needs a full re-test. Firmware 4.0 release moves to 9 December.\nRahul Desai (2026-11-19 16:15): @Sofia Martins should I tell the customers who asked about 4.0?\nSofia Martins (2026-11-19 16:30): Yes please, 9 December, and no change for anyone not using the highest sensitivity level.",
+    "[slack \u00b7 #engineering \u00b7 thread started by Sofia Martins \u00b7 2026-11-10]\nSofia Martins (2026-11-10 10:00) [edited]: Firmware 4.0 for the AX-200: code freeze is on 18 November, release still planned for 2 December.\nVikram Shah (2026-11-10 10:25): QA plan is ready, 3 days of safety regression tests after the freeze.",
+    "[slack \u00b7 #engineering \u00b7 conversation \u00b7 2026-07-02]\nRahul Desai (2026-07-02 12:10): Rover-S firmware 2.3.2 is now rolled out to all customer fleets. Charging issue ticket count is back to zero.",
+    "[slack \u00b7 #sales-ops \u00b7 thread started by Arjun Mehta \u00b7 2026-03-09]\nArjun Mehta (2026-03-09 16:05): @Maya Pillai Northwind Foods wants to cancel their Enterprise subscription 25 days after the invoice. Can we still give a full refund?\nMaya Pillai (2026-03-09 16:17): Yes. Legal says 30 days is firm for enterprise, and 25 < 30, so full refund. Loop in billing.\nArjun Mehta (2026-03-09 16:20): Thanks! Forwarding to Kavya in billing."
+   ],
+   "answers": [
+    "Rahul Desai asked whether to tell customers about the firmware 4.0 delay.",
+    "Rahul Desai",
+    "Rahul Desai."
+   ]
+  },
+  "maya": {
+   "context": [
+    "[slack \u00b7 #sales-ops \u00b7 thread started by Arjun Mehta \u00b7 2026-03-09]\nArjun Mehta (2026-03-09 16:05): @Maya Pillai Northwind Foods wants to cancel their Enterprise subscription 25 days after the invoice. Can we still give a full refund?\nMaya Pillai (2026-03-09 16:17): Yes. Legal says 30 days is firm for enterprise, and 25 < 30, so full refund. Loop in billing.\nArjun Mehta (2026-03-09 16:20): Thanks! Forwarding to Kavya in billing.",
+    "[slack \u00b7 #sales-ops \u00b7 thread started by Priya Nair \u00b7 2026-11-04]\nPriya Nair (2026-11-04 11:00): Reminder: quote template v3 with the vision kit add-on is live. Please stop using v2.\nMaya Pillai (2026-11-04 11:30): Updated the CRM link as well.",
+    "[slack \u00b7 #sales-ops \u00b7 thread started by Maya Pillai \u00b7 2026-09-15]\nMaya Pillai (2026-09-15 10:30): Heads up: from 1 October the new discount thresholds apply (VP above 15%, CFO above 30%). Details in the pricing memo from Finance.\nArjun Mehta (2026-09-15 10:50): Good timing, I have Brightline asking for 32% on a 2027 framework. @Ananya Rao I'll send you the details.",
+    "[slack \u00b7 #general \u00b7 conversation \u00b7 2026-11-16]\nNeha Kulkarni (2026-11-16 09:30): Reminder: offices are closed from 24 December to 1 January. Support rota volunteers get those days back."
+   ],
+   "answers": [
+    "Maya Pillai said that Northwind Foods can still receive a full refund, as 25 days is less than the firm 30-day period for enterprise subscriptions, as per legal advice.",
+    "Maya Pillai stated that Northwind Foods can still receive a full refund, as 25 days is less than the 30-day firm period for Enterprise subscriptions.",
+    "Maya Pillai said that since 25 days is less than 30 days, they can still give a full refund to Northwind Foods."
+   ]
+  },
+  "release": {
+   "context": [
+    "[slack \u00b7 #engineering \u00b7 thread started by Sofia Martins \u00b7 2026-11-10]\nSofia Martins (2026-11-10 10:00) [edited]: Firmware 4.0 for the AX-200: code freeze is on 18 November, release still planned for 2 December.\nVikram Shah (2026-11-10 10:25): QA plan is ready, 3 days of safety regression tests after the freeze.",
+    "[slack \u00b7 #engineering \u00b7 thread started by Vikram Shah \u00b7 2026-11-19]\nVikram Shah (2026-11-19 15:20): Safety regression found an issue in the new collision sensitivity setting at the highest level: the protective stop takes 310 ms instead of the required 250 ms.\nSofia Martins (2026-11-19 16:00): Confirmed. Fix is small but needs a full re-test. Firmware 4.0 release moves to 9 December.\nRahul Desai (2026-11-19 16:15): @Sofia Martins should I tell the customers who asked about 4.0?\nSofia Martins (2026-11-19 16:30): Yes please, 9 December, and no change for anyone not using the highest sensitivity level.",
+    "[slack \u00b7 #sales-ops \u00b7 conversation \u00b7 2026-10-28]\nArjun Mehta (2026-10-28 17:45): :tada: Brightline Packaging signed the 2027 framework agreement today: six AX-200 arms at 28% off. First delivery planned for March 2027.",
+    "[slack \u00b7 #engineering \u00b7 conversation \u00b7 2026-07-02]\nRahul Desai (2026-07-02 12:10): Rover-S firmware 2.3.2 is now rolled out to all customer fleets. Charging issue ticket count is back to zero."
+   ],
+   "answers": [
+    "Firmware 4.0 for the AX-200 is scheduled to be released on 9 December.",
+    "Firmware 4.0 for the AX-200 is now planned to be released on 9 December.",
+    "Firmware 4.0 for the AX-200 is now scheduled to be released on 9 December."
+   ]
+  }
+ }
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "C01GENERAL",
+    "name": "general",
+    "is_private": false,
+    "members": [
+      "U01MAYA",
+      "U02ARJUN",
+      "U03SOFIA",
+      "U04RAHUL",
+      "U05PRIYA",
+      "U06NEHA",
+      "U07ANANYA",
+      "U08VIKRAM"
+    ],
+    "created": 1736101800
+  },
+  {
+    "id": "C02SALES",
+    "name": "sales-ops",
+    "is_private": false,
+    "members": [
+      "U01MAYA",
+      "U02ARJUN",
+      "U05PRIYA",
+      "U07ANANYA"
+    ],
+    "created": 1736101800
+  },
+  {
+    "id": "C03ENG",
+    "name": "engineering",
+    "is_private": false,
+    "members": [
+      "U03SOFIA",
+      "U04RAHUL",
+      "U08VIKRAM",
+      "U02ARJUN"
+    ],
+    "created": 1736101800
+  }
+]

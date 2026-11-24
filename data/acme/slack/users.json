@@ -1,0 +1,82 @@
+[
+  {
+    "id": "U01MAYA",
+    "name": "maya",
+    "real_name": "Maya Pillai",
+    "profile": {
+      "display_name": "Maya",
+      "title": "Sales Ops Manager"
+    },
+    "is_bot": false
+  },
+  {
+    "id": "U02ARJUN",
+    "name": "arjun",
+    "real_name": "Arjun Mehta",
+    "profile": {
+      "display_name": "Arjun",
+      "title": "Account Executive"
+    },
+    "is_bot": false
+  },
+  {
+    "id": "U03SOFIA",
+    "name": "sofia",
+    "real_name": "Sofia Martins",
+    "profile": {
+      "display_name": "Sofia",
+      "title": "Firmware Lead"
+    },
+    "is_bot": false
+  },
+  {
+    "id": "U04RAHUL",
+    "name": "rahul",
+    "real_name": "Rahul Desai",
+    "profile": {
+      "display_name": "Rahul",
+      "title": "Support Engineer"
+    },
+    "is_bot": false
+  },
+  {
+    "id": "U05PRIYA",
+    "name": "priya",
+    "real_name": "Priya Nair",
+    "profile": {
+      "display_name": "Priya",
+      "title": "Head of Sales Enablement"
+    },
+    "is_bot": false
+  },
+  {
+    "id": "U06NEHA",
+    "name": "neha",
+    "real_name": "Neha Kulkarni",
+    "profile": {
+      "display_name": "Neha",
+      "title": "HR Business Partner"
+    },
+    "is_bot": false
+  },
+  {
+    "id": "U07ANANYA",
+    "name": "ananya",
+    "real_name": "Ananya Rao",
+    "profile": {
+      "display_name": "Ananya",
+      "title": "CFO"
+    },
+    "is_bot": false
+  },
+  {
+    "id": "U08VIKRAM",
+    "name": "vikram",
+    "real_name": "Vikram Shah",
+    "profile": {
+      "display_name": "Vikram",
+      "title": "QA Lead"
+    },
+    "is_bot": false
+  }
+]

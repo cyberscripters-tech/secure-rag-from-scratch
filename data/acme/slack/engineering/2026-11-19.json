@@ -1,0 +1,48 @@
+[
+  {
+    "type": "message",
+    "user": "U08VIKRAM",
+    "text": "Safety regression found an issue in the new collision sensitivity setting at the highest level: the protective stop takes 310 ms instead of the required 250 ms.",
+    "ts": "1795081800.000000",
+    "thread_ts": "1795081800.000000",
+    "reply_count": 3,
+    "replies": [
+      {
+        "user": "U03SOFIA",
+        "ts": "1795084200.000000"
+      },
+      {
+        "user": "U04RAHUL",
+        "ts": "1795085100.000000"
+      },
+      {
+        "user": "U03SOFIA",
+        "ts": "1795086000.000000"
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U03SOFIA",
+    "text": "Confirmed. Fix is small but needs a full re-test. Firmware 4.0 release moves to 9 December.",
+    "ts": "1795084200.000000",
+    "thread_ts": "1795081800.000000",
+    "parent_user_id": "U08VIKRAM"
+  },
+  {
+    "type": "message",
+    "user": "U04RAHUL",
+    "text": "<@U03SOFIA> should I tell the customers who asked about 4.0?",
+    "ts": "1795085100.000000",
+    "thread_ts": "1795081800.000000",
+    "parent_user_id": "U08VIKRAM"
+  },
+  {
+    "type": "message",
+    "user": "U03SOFIA",
+    "text": "Yes please, 9 December, and no change for anyone not using the highest sensitivity level.",
+    "ts": "1795086000.000000",
+    "thread_ts": "1795081800.000000",
+    "parent_user_id": "U08VIKRAM"
+  }
+]

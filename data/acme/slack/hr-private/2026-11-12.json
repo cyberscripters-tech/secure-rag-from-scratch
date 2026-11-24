@@ -1,0 +1,36 @@
+[
+  {
+    "type": "message",
+    "user": "U06NEHA",
+    "text": "Salary review: letters go out on 15 January. The merit budget for 2027 is 6% of payroll, with a separate 1.5% pool for promotions.",
+    "ts": "1794461400.000000",
+    "thread_ts": "1794461400.000000",
+    "reply_count": 2,
+    "replies": [
+      {
+        "user": "U07ANANYA",
+        "ts": "1794462480.000000"
+      },
+      {
+        "user": "U05PRIYA",
+        "ts": "1794463800.000000"
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U07ANANYA",
+    "text": "Confirmed from Finance. Please keep this channel only until the letters are out.",
+    "ts": "1794462480.000000",
+    "thread_ts": "1794461400.000000",
+    "parent_user_id": "U06NEHA"
+  },
+  {
+    "type": "message",
+    "user": "U05PRIYA",
+    "text": "Noted, I'll prepare the sales team's promotion cases by 10 December.",
+    "ts": "1794463800.000000",
+    "thread_ts": "1794461400.000000",
+    "parent_user_id": "U06NEHA"
+  }
+]

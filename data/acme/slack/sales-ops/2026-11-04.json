@@ -1,0 +1,24 @@
+[
+  {
+    "type": "message",
+    "user": "U05PRIYA",
+    "text": "Reminder: quote template v3 with the vision kit add-on is live. Please stop using v2.",
+    "ts": "1793770200.000000",
+    "thread_ts": "1793770200.000000",
+    "reply_count": 1,
+    "replies": [
+      {
+        "user": "U01MAYA",
+        "ts": "1793772000.000000"
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U01MAYA",
+    "text": "Updated the CRM link as well.",
+    "ts": "1793772000.000000",
+    "thread_ts": "1793770200.000000",
+    "parent_user_id": "U05PRIYA"
+  }
+]

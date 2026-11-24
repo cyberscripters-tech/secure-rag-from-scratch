@@ -38,7 +38,7 @@ git checkout ep02
 | 04 | PDFs done right (incl. scanned PDFs) | [`ep04/`](ep04) | ✅ |
 | 05 | Word documents & metadata | [`ep05/`](ep05) | ✅ |
 | 06 | Emails | [`ep06/`](ep06) | ✅ |
-| 07 | Slack | `ep07/` | 🔜 |
+| 07 | Slack | [`ep07/`](ep07) | ✅ |
 | 08 | One ingestion pipeline for everything | `ep08/` | 🔜 |
 | 09 | Better retrieval: hybrid search & re-ranking | `ep09/` | 🔜 |
 | 10 | Chat UI with citations | `ep10/` | 🔜 |

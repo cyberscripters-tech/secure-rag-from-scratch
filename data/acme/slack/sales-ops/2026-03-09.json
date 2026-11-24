@@ -1,0 +1,36 @@
+[
+  {
+    "type": "message",
+    "user": "U02ARJUN",
+    "text": "<@U01MAYA> Northwind Foods wants to cancel their Enterprise subscription 25 days after the invoice. Can we still give a full refund?",
+    "ts": "1773052500.000000",
+    "thread_ts": "1773052500.000000",
+    "reply_count": 2,
+    "replies": [
+      {
+        "user": "U01MAYA",
+        "ts": "1773053220.000000"
+      },
+      {
+        "user": "U02ARJUN",
+        "ts": "1773053400.000000"
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U01MAYA",
+    "text": "Yes. Legal says 30 days is firm for enterprise, and 25 < 30, so full refund. Loop in billing.",
+    "ts": "1773053220.000000",
+    "thread_ts": "1773052500.000000",
+    "parent_user_id": "U02ARJUN"
+  },
+  {
+    "type": "message",
+    "user": "U02ARJUN",
+    "text": "Thanks! Forwarding to Kavya in billing.",
+    "ts": "1773053400.000000",
+    "thread_ts": "1773052500.000000",
+    "parent_user_id": "U02ARJUN"
+  }
+]

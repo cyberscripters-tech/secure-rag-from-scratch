@@ -1,0 +1,11 @@
+[
+  {
+    "type": "message",
+    "user": "B01CI",
+    "text": "Build #1842 passed (ax200-firmware, branch release/4.0)",
+    "ts": "1794929580.000000",
+    "bot_id": "B01CI",
+    "subtype": "bot_message",
+    "username": "ci-bot"
+  }
+]

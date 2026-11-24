@@ -1,0 +1,24 @@
+{
+ "naive": {
+  "chunks": 18,
+  "hit1": 0.9,
+  "hit4": 1.0,
+  "misses": [
+   {
+    "question": "When will firmware 4.0 for the AX-200 be released?",
+    "top": "Firmware 4.0 for the AX-200: code freeze is on 18 November, release still planned for 2 December."
+   }
+  ]
+ },
+ "clean": {
+  "chunks": 10,
+  "hit1": 0.9,
+  "hit4": 1.0,
+  "misses": [
+   {
+    "question": "When will firmware 4.0 for the AX-200 be released?",
+    "top": "[slack \u00b7 #engineering \u00b7 thread started by Sofia Martins \u00b7 2026-11-10]\nSofia Martins (2026-11-10 10:00) [edited]: Firmwar"
+   }
+  ]
+ }
+}

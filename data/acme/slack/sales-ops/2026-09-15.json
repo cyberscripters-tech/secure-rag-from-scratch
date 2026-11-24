@@ -1,0 +1,24 @@
+[
+  {
+    "type": "message",
+    "user": "U01MAYA",
+    "text": "Heads up: from 1 October the new discount thresholds apply (VP above 15%, CFO above 30%). Details in the pricing memo from Finance.",
+    "ts": "1789448400.000000",
+    "thread_ts": "1789448400.000000",
+    "reply_count": 1,
+    "replies": [
+      {
+        "user": "U02ARJUN",
+        "ts": "1789449600.000000"
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U02ARJUN",
+    "text": "Good timing, I have Brightline asking for 32% on a 2027 framework. <@U07ANANYA> I'll send you the details.",
+    "ts": "1789449600.000000",
+    "thread_ts": "1789448400.000000",
+    "parent_user_id": "U01MAYA"
+  }
+]
